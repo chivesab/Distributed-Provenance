@@ -15,15 +15,15 @@ class NodeReplicationStub(object):
             channel: A grpc.Channel.
         """
         self.ReplicateFile = channel.unary_unary(
-                '/stream.NodeReplication/ReplicateFile',
-                request_serializer=node__comm__pb2.ReplicateFileRequest.SerializeToString,
-                response_deserializer=node__comm__pb2.ReplicateFileResponse.FromString,
-                )
+            "/stream.NodeReplication/ReplicateFile",
+            request_serializer=node__comm__pb2.ReplicateFileRequest.SerializeToString,
+            response_deserializer=node__comm__pb2.ReplicateFileResponse.FromString,
+        )
         self.CreateReplica = channel.stream_unary(
-                '/stream.NodeReplication/CreateReplica',
-                request_serializer=node__comm__pb2.CreateReplicaRequest.SerializeToString,
-                response_deserializer=node__comm__pb2.CreateReplicaReply.FromString,
-                )
+            "/stream.NodeReplication/CreateReplica",
+            request_serializer=node__comm__pb2.CreateReplicaRequest.SerializeToString,
+            response_deserializer=node__comm__pb2.CreateReplicaReply.FromString,
+        )
 
 
 class NodeReplicationServicer(object):
@@ -32,68 +32,93 @@ class NodeReplicationServicer(object):
     def ReplicateFile(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def CreateReplica(self, request_iterator, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_NodeReplicationServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'ReplicateFile': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReplicateFile,
-                    request_deserializer=node__comm__pb2.ReplicateFileRequest.FromString,
-                    response_serializer=node__comm__pb2.ReplicateFileResponse.SerializeToString,
-            ),
-            'CreateReplica': grpc.stream_unary_rpc_method_handler(
-                    servicer.CreateReplica,
-                    request_deserializer=node__comm__pb2.CreateReplicaRequest.FromString,
-                    response_serializer=node__comm__pb2.CreateReplicaReply.SerializeToString,
-            ),
+        "ReplicateFile": grpc.unary_unary_rpc_method_handler(
+            servicer.ReplicateFile,
+            request_deserializer=node__comm__pb2.ReplicateFileRequest.FromString,
+            response_serializer=node__comm__pb2.ReplicateFileResponse.SerializeToString,
+        ),
+        "CreateReplica": grpc.stream_unary_rpc_method_handler(
+            servicer.CreateReplica,
+            request_deserializer=node__comm__pb2.CreateReplicaRequest.FromString,
+            response_serializer=node__comm__pb2.CreateReplicaReply.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'stream.NodeReplication', rpc_method_handlers)
+        "stream.NodeReplication", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class NodeReplication(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def ReplicateFile(request,
+    def ReplicateFile(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/stream.NodeReplication/ReplicateFile',
+            "/stream.NodeReplication/ReplicateFile",
             node__comm__pb2.ReplicateFileRequest.SerializeToString,
             node__comm__pb2.ReplicateFileResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def CreateReplica(request_iterator,
+    def CreateReplica(
+        request_iterator,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        insecure=False,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.stream_unary(
+            request_iterator,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/stream.NodeReplication/CreateReplica',
+            "/stream.NodeReplication/CreateReplica",
             node__comm__pb2.CreateReplicaRequest.SerializeToString,
             node__comm__pb2.CreateReplicaReply.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )

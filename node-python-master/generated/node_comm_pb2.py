@@ -7,62 +7,78 @@ from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
+    b'\n\x0fnode-comm.proto\x12\x06stream"9\n\x14ReplicateFileRequest\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0f\n\x07nodeips\x18\x02 \x03(\t"\'\n\x15ReplicateFileResponse\x12\x0e\n\x06status\x18\x01 \x01(\t"9\n\x14\x43reateReplicaRequest\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\x0c"$\n\x12\x43reateReplicaReply\x12\x0e\n\x06status\x18\x01 \x01(\t2\xb0\x01\n\x0fNodeReplication\x12N\n\rReplicateFile\x12\x1c.stream.ReplicateFileRequest\x1a\x1d.stream.ReplicateFileResponse"\x00\x12M\n\rCreateReplica\x12\x1c.stream.CreateReplicaRequest\x1a\x1a.stream.CreateReplicaReply"\x00(\x01\x42\x13\n\x0forg.node.protosP\x01\x62\x06proto3'
+)
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0fnode-comm.proto\x12\x06stream\"9\n\x14ReplicateFileRequest\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0f\n\x07nodeips\x18\x02 \x03(\t\"\'\n\x15ReplicateFileResponse\x12\x0e\n\x06status\x18\x01 \x01(\t\"9\n\x14\x43reateReplicaRequest\x12\x10\n\x08\x66ilename\x18\x01 \x01(\t\x12\x0f\n\x07payload\x18\x02 \x01(\x0c\"$\n\x12\x43reateReplicaReply\x12\x0e\n\x06status\x18\x01 \x01(\t2\xb0\x01\n\x0fNodeReplication\x12N\n\rReplicateFile\x12\x1c.stream.ReplicateFileRequest\x1a\x1d.stream.ReplicateFileResponse\"\x00\x12M\n\rCreateReplica\x12\x1c.stream.CreateReplicaRequest\x1a\x1a.stream.CreateReplicaReply\"\x00(\x01\x42\x13\n\x0forg.node.protosP\x01\x62\x06proto3')
-
-
-
-_REPLICATEFILEREQUEST = DESCRIPTOR.message_types_by_name['ReplicateFileRequest']
-_REPLICATEFILERESPONSE = DESCRIPTOR.message_types_by_name['ReplicateFileResponse']
-_CREATEREPLICAREQUEST = DESCRIPTOR.message_types_by_name['CreateReplicaRequest']
-_CREATEREPLICAREPLY = DESCRIPTOR.message_types_by_name['CreateReplicaReply']
-ReplicateFileRequest = _reflection.GeneratedProtocolMessageType('ReplicateFileRequest', (_message.Message,), {
-  'DESCRIPTOR' : _REPLICATEFILEREQUEST,
-  '__module__' : 'node_comm_pb2'
-  # @@protoc_insertion_point(class_scope:stream.ReplicateFileRequest)
-  })
+_REPLICATEFILEREQUEST = DESCRIPTOR.message_types_by_name["ReplicateFileRequest"]
+_REPLICATEFILERESPONSE = DESCRIPTOR.message_types_by_name["ReplicateFileResponse"]
+_CREATEREPLICAREQUEST = DESCRIPTOR.message_types_by_name["CreateReplicaRequest"]
+_CREATEREPLICAREPLY = DESCRIPTOR.message_types_by_name["CreateReplicaReply"]
+ReplicateFileRequest = _reflection.GeneratedProtocolMessageType(
+    "ReplicateFileRequest",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _REPLICATEFILEREQUEST,
+        "__module__": "node_comm_pb2",
+        # @@protoc_insertion_point(class_scope:stream.ReplicateFileRequest)
+    },
+)
 _sym_db.RegisterMessage(ReplicateFileRequest)
 
-ReplicateFileResponse = _reflection.GeneratedProtocolMessageType('ReplicateFileResponse', (_message.Message,), {
-  'DESCRIPTOR' : _REPLICATEFILERESPONSE,
-  '__module__' : 'node_comm_pb2'
-  # @@protoc_insertion_point(class_scope:stream.ReplicateFileResponse)
-  })
+ReplicateFileResponse = _reflection.GeneratedProtocolMessageType(
+    "ReplicateFileResponse",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _REPLICATEFILERESPONSE,
+        "__module__": "node_comm_pb2",
+        # @@protoc_insertion_point(class_scope:stream.ReplicateFileResponse)
+    },
+)
 _sym_db.RegisterMessage(ReplicateFileResponse)
 
-CreateReplicaRequest = _reflection.GeneratedProtocolMessageType('CreateReplicaRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEREPLICAREQUEST,
-  '__module__' : 'node_comm_pb2'
-  # @@protoc_insertion_point(class_scope:stream.CreateReplicaRequest)
-  })
+CreateReplicaRequest = _reflection.GeneratedProtocolMessageType(
+    "CreateReplicaRequest",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _CREATEREPLICAREQUEST,
+        "__module__": "node_comm_pb2",
+        # @@protoc_insertion_point(class_scope:stream.CreateReplicaRequest)
+    },
+)
 _sym_db.RegisterMessage(CreateReplicaRequest)
 
-CreateReplicaReply = _reflection.GeneratedProtocolMessageType('CreateReplicaReply', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEREPLICAREPLY,
-  '__module__' : 'node_comm_pb2'
-  # @@protoc_insertion_point(class_scope:stream.CreateReplicaReply)
-  })
+CreateReplicaReply = _reflection.GeneratedProtocolMessageType(
+    "CreateReplicaReply",
+    (_message.Message,),
+    {
+        "DESCRIPTOR": _CREATEREPLICAREPLY,
+        "__module__": "node_comm_pb2",
+        # @@protoc_insertion_point(class_scope:stream.CreateReplicaReply)
+    },
+)
 _sym_db.RegisterMessage(CreateReplicaReply)
 
-_NODEREPLICATION = DESCRIPTOR.services_by_name['NodeReplication']
+_NODEREPLICATION = DESCRIPTOR.services_by_name["NodeReplication"]
 if _descriptor._USE_C_DESCRIPTORS == False:
 
-  DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\017org.node.protosP\001'
-  _REPLICATEFILEREQUEST._serialized_start=27
-  _REPLICATEFILEREQUEST._serialized_end=84
-  _REPLICATEFILERESPONSE._serialized_start=86
-  _REPLICATEFILERESPONSE._serialized_end=125
-  _CREATEREPLICAREQUEST._serialized_start=127
-  _CREATEREPLICAREQUEST._serialized_end=184
-  _CREATEREPLICAREPLY._serialized_start=186
-  _CREATEREPLICAREPLY._serialized_end=222
-  _NODEREPLICATION._serialized_start=225
-  _NODEREPLICATION._serialized_end=401
+    DESCRIPTOR._options = None
+    DESCRIPTOR._serialized_options = b"\n\017org.node.protosP\001"
+    _REPLICATEFILEREQUEST._serialized_start = 27
+    _REPLICATEFILEREQUEST._serialized_end = 84
+    _REPLICATEFILERESPONSE._serialized_start = 86
+    _REPLICATEFILERESPONSE._serialized_end = 125
+    _CREATEREPLICAREQUEST._serialized_start = 127
+    _CREATEREPLICAREQUEST._serialized_end = 184
+    _CREATEREPLICAREPLY._serialized_start = 186
+    _CREATEREPLICAREPLY._serialized_end = 222
+    _NODEREPLICATION._serialized_start = 225
+    _NODEREPLICATION._serialized_end = 401
 # @@protoc_insertion_point(module_scope)
